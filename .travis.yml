@@ -23,6 +23,8 @@ script:
 - npm run test
 deploy:
   provider: heroku
-  app: advanced-node
+  app:
+    master: advanced-node
+    production: advanced-node
   api_key:
     secure: $HEROKU_API_KEY
