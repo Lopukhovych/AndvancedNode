@@ -16,10 +16,10 @@ class Header extends Component {
       default:
         return [
           <li key="3" style={{ margin: '0 10px' }}>
-            <Link to="/blogs">My Blogs</Link>
+            <Link className="blogs" to="/blogs">My Blogs</Link>
           </li>,
           <li key="2">
-            <a href={'/auth/logout'}>Logout</a>
+            <a className="logout" href={'/auth/logout'}>Logout</a>
           </li>
         ];
     }
