@@ -23,7 +23,7 @@
     "jest": "^22.4.4",
     "jest-config": "^25.1.0",
     "migrate-mongoose": "^3.2.2",
-    "mongoose": "^4.11.1",
+    "mongoose": "^5.9.3",
     "node-fetch": "^2.6.0",
     "nodemon": "^1.11.0",
     "passport": "^0.3.2",
