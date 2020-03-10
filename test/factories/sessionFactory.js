@@ -7,7 +7,6 @@ const keys = require('../../config/keys');
 const keygrip = Keygrip([keys.cookieKey]);
 
 const getSession = async (user) => {
-	console.log('user._id: ', user._id);
 	const sessionObj = {
 		passport: {
 			user: user._id.toString()
