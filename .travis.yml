@@ -1,9 +1,6 @@
 language: node_js
 node_js:
   - '8'
-branches:
-  only:
-    - master
 dist: trusty
 services:
   - mongodb
@@ -27,4 +24,4 @@ deploy:
     master: advanced-node
     production: advanced-node
   api_key:
-    secure: QcBb03auEqBklgYrGunlf3G+LsjhnsMzam9pGVHhWHoWV4/6aokeOPFhqvO3aRh9gKu1Vexf7Zi0oUlz9tGGdEJO+r1f6/gs1yMr6IFoT+OvricAtaPtUiT1tTk72/+qBFqbnzm3WD0+clnjS00anStzKJJYmDSe+8+4DOjda8WgNigkgwbRCeDUtSQ4zkJiwA09sr91bs/oGa9O8i7pZUzQwG4omLltWxbqCpMn0T9dcI+5CGlSMAjwh0qE0aKORAW0dUAoLYwyZjYEyMDwKn+ng6CDo3CuJGdcRn+h4qxFKLrt5DLQVgDD19xj3ihxYShtzdzvu3gJ2dsMHbcPu8WCGoj/R8tGxFW4QHtSMO6VV729qEhL90psjyh1CMLDkNg7xnBwPKmntMuPjtpvc4UxBeBgUlAzMut2wqssjBlhjVMxBdV4zoZnghQr8Uli+/aCQeiFYvg+HgwZxVjxjsGyEnJ/GoLL3lJ/xPeCWZZFQJoh5YSnumkwptvEpkGteop+oZsDHBDhyxjfD/P+iDclCfNiUT+SMhZQS7VEaBd7AUYWaSaRqqaywobs405NXk+8eLEzEbsn+ean5672/+AIQWfwSZav3BtR21ppDws7nfQ8KO6R8Y2UeAZTF/zxPkfCKC9j7l6XD93WgGM+PU0sb1jvHCfe7pEsiUX7Al8=
+    secure: $HEROKU_API_KEY
