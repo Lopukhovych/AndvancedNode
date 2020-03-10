@@ -1,11 +1,4 @@
-// const puppeteer = require('puppeteer');
-// const Buffer = require('safe-buffer').Buffer;
-// const Keygrip = require('keygrip');
-// const {getSession} = require('./factories/sessionFactory');
-// const userFactory = require('./factories/userFactory');
 const {getPageInstance} = require('./helpers/page');
-
-
 
 const HeaderText = 'Blogster';
 let page;

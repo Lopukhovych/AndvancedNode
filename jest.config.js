@@ -7,11 +7,16 @@ const {defaults} = require('jest-config');
 // setupTestFrameworkScriptFile has been deprecated in
 // favor of setupFilesAfterEnv in jest 24
 // setupFilesAfterEnv: ['./jest.setup.js'],
+const modulePathIgnorePatterns = process.env.TEST_UNIT ? ['puppeteerTest'] : [];
+const coverageDirectory = !process.env.TEST_UNIT ? 'puppeteerTest' : undefined;
+
 module.exports = {
-	setupFilesAfterEnv: ['./test/setup.js'],
+	setupFilesAfterEnv: ['./puppeteerTest/setup.js'],
 	moduleFileExtensions: [...defaults.moduleFileExtensions, 'ts', 'tsx'],
 	verbose: true,
 	testURL: "http://localhost",
 	collectCoverage: false,
 	preset: "jest-puppeteer",
+	modulePathIgnorePatterns,
+	coverageDirectory,
 };
