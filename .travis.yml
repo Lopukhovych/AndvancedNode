@@ -14,16 +14,21 @@ cache:
 install:
   - npm install
   - npm run build
-script:
-  - nohup npm run start &
-  - sleep 5
-  - npm run test
-deploy:
-  provider: heroku
-  app:
-    master: advanced-node
-    production: advanced-node
-  api_key: ${HEROKU_API_KEY}
+jobs:
+  include:
+    - stage: start_app
+      script: nohup npm run start &
+    - stage: test
+      script: npm run test
+      after_success:
+        - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
+        - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+    - stage: deploy
+      provider: heroku
+        app:
+          master: advanced-node
+          production: advanced-node
+        api_key: ${HEROKU_API_KEY}
 # after_success:
 # Generating code coverage for test files using Puppeteer is currently not possible
 #  - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js

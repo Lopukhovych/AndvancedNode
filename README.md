@@ -1,7 +1,7 @@
 # Advanced Node
  Advanced Node studying repo
   
-<!--
+
 # Factory line manager
 [![Travis][build-badge]][build]
 [![Coveralls][coveralls-badge]][coveralls]
@@ -13,4 +13,3 @@ Awesome factory line manager!
 
 [coveralls-badge]: https://img.shields.io/coveralls/Lopukhovych/AndvancedNode/master.png?style=flat-square
 [coveralls]: https://coveralls.io/github/Lopukhovych/AndvancedNode 
--->
