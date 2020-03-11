@@ -19,9 +19,9 @@ jobs:
     -
       stage: test
       script:
-        - npm run test
-        - sleep 3
         - nohup npm run start &
+        - sleep 3
+        - npm run test
       after_success:
          - 'cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js'
          - 'cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js'
