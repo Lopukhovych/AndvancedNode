@@ -14,6 +14,11 @@ cache:
 install:
   - npm install
   - npm run build
+stages:
+  - start_app
+  - test
+  - name: deploy
+    if: branch = master
 jobs:
   include:
     - stage: start_app
@@ -29,11 +34,6 @@ jobs:
           master: advanced-node
           production: advanced-node
         api_key: ${HEROKU_API_KEY}
-stages:
-  - start_app
-  - test
-  - name: deploy
-    if: branch = master
 # after_success:
 # Generating code coverage for test files using Puppeteer is currently not possible
 #  - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
