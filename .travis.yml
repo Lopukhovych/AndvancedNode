@@ -23,7 +23,7 @@ jobs:
         - sleep 3
         - nohup npm run start &
       after_success:
-         - 'cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js',
+         - 'cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js'
          - 'cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js'
     -
       stage: deploy
