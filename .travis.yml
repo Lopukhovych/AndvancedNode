@@ -14,20 +14,12 @@ cache:
 install:
   - npm install
   - npm run build
-stages:
-  - start_app
-  - test
-  - name: deploy
-    if: branch = master
 jobs:
   include:
-    - stage: start_app
+    - stage: start
       script: nohup npm run start &
     - stage: test
       script: npm run test
-      after_success:
-        - cat ./coverage/lcov.info | ./node_modules/codecov.io/bin/codecov.io.js
-        - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
     - stage: deploy
       provider: heroku
         app:
